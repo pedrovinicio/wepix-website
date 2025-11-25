@@ -1,0 +1,341 @@
+/* WePix Website Styles */
+/* Brand Colors */
+:root {
+    --primary: #5DB4E8;
+    --primary-light: #8ECDF4;
+    --primary-dark: #3A9FDB;
+    --dark-blue: #0F172A;
+    --secondary: #E8F6FD;
+    --background: #FFFFFF;
+    --surface: #FAFBFC;
+    --text: #1F2937;
+    --text-secondary: #6B7280;
+    --text-light: #9CA3AF;
+    --border: #E5E7EB;
+    --success: #10B981;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.tagline {
+    font-size: 24px;
+    margin-bottom: 16px;
+    opacity: 0.95;
+}
+
+.subtitle {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 32px;
+    opacity: 0.9;
+}
+
+.app-store-button img {
+    height: 54px;
+    transition: transform 0.2s;
+}
+
+.app-store-button:hover img {
+    transform: scale(1.05);
+}
+
+/* Video Section */
+.video-section {
+    padding: 60px 0;
+    background-color: var(--background);
+}
+
+.video-wrapper {
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background-color: var(--surface);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 48px;
+    color: var(--dark-blue);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.feature {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--dark-blue);
+}
+
+.feature p {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+/* Use Cases Section */
+.use-cases {
+    padding: 80px 0;
+}
+
+.use-cases h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 48px;
+    color: var(--dark-blue);
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.use-case {
+    background: var(--secondary);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--dark-blue);
+}
+
+/* Support Section */
+.support {
+    padding: 80px 0;
+    background-color: var(--surface);
+    text-align: center;
+}
+
+.support h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: var(--dark-blue);
+}
+
+.support p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.support-email {
+    display: inline-block;
+    font-size: 20px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.support-email:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Privacy Page Styles */
+.privacy-header {
+    background-color: var(--primary);
+    padding: 20px 0;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.privacy-content {
+    padding: 60px 0;
+}
+
+.privacy-content h1 {
+    font-size: 36px;
+    color: var(--dark-blue);
+    margin-bottom: 16px;
+}
+
+.last-updated {
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.privacy-content h2 {
+    font-size: 24px;
+    color: var(--dark-blue);
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.privacy-content h3 {
+    font-size: 18px;
+    color: var(--dark-blue);
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.privacy-content p {
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+.privacy-content ul {
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.privacy-content li {
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.privacy-content a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.privacy-content a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .tagline {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .features,
+    .use-cases,
+    .support {
+        padding: 60px 0;
+    }
+
+    .features h2,
+    .use-cases h2,
+    .support h2 {
+        font-size: 28px;
+    }
+
+    .privacy-content h1 {
+        font-size: 28px;
+    }
+}
