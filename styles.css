@@ -401,7 +401,13 @@ footer {
 }
 
 .footer-links a {
-    margin: 0 12px;
+    margin: 0 16px;
+}
+
+.footer-links a:not(:last-child)::after {
+    content: "•";
+    margin-left: 32px;
+    opacity: 0.5;
 }
 
 /* Responsive */
