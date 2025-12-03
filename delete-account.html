@@ -38,42 +38,8 @@
                 <li>Alguns dados podem ser retidos por obrigacoes legais conforme a legislacao brasileira</li>
             </ul>
 
-            <h2>Solicitar Exclusao</h2>
-            <p>Para solicitar a exclusao da sua conta, preencha o formulario abaixo:</p>
-
-            <form class="delete-form" id="deleteForm">
-                <div class="form-group">
-                    <label for="email">Email da conta WePix *</label>
-                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="reason">Motivo da exclusao (opcional)</label>
-                    <select id="reason" name="reason">
-                        <option value="">Selecione um motivo</option>
-                        <option value="nao-uso">Nao uso mais o aplicativo</option>
-                        <option value="privacidade">Preocupacoes com privacidade</option>
-                        <option value="outro-app">Mudei para outro aplicativo</option>
-                        <option value="problemas">Problemas com o aplicativo</option>
-                        <option value="outro">Outro motivo</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="comments">Comentarios adicionais (opcional)</label>
-                    <textarea id="comments" name="comments" rows="4" placeholder="Conte-nos mais sobre sua decisao..."></textarea>
-                </div>
-
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="confirm" name="confirm" required>
-                    <label for="confirm">Entendo que esta acao e permanente e todos os meus dados serao excluidos.</label>
-                </div>
-
-                <button type="submit" class="submit-button">Solicitar Exclusao</button>
-            </form>
-
-            <h2>Outras opcoes</h2>
-            <p>Se voce prefere entrar em contato diretamente, envie um email para:</p>
+            <h2>Como solicitar a exclusao</h2>
+            <p>Para solicitar a exclusao da sua conta, envie um email para:</p>
             <p><a href="mailto:privacy@wepix-app.com?subject=Solicita%C3%A7%C3%A3o%20de%20Exclus%C3%A3o%20de%20Conta">privacy@wepix-app.com</a></p>
             <p>Inclua no email o endereco de email associado a sua conta WePix.</p>
         </div>
@@ -88,28 +54,5 @@
             <p class="copyright">© 2025 WePix. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('deleteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            var email = document.getElementById('email').value;
-            var reason = document.getElementById('reason').value;
-            var comments = document.getElementById('comments').value;
-
-            var subject = 'Solicitacao de Exclusao de Conta - WePix';
-            var body = 'Solicito a exclusao da minha conta WePix.\n\n';
-            body += 'Email da conta: ' + email + '\n';
-            if (reason) {
-                body += 'Motivo: ' + reason + '\n';
-            }
-            if (comments) {
-                body += 'Comentarios: ' + comments + '\n';
-            }
-            body += '\nEntendo que esta acao e permanente e irreversivel.';
-
-            window.location.href = 'mailto:privacy@wepix-app.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        });
-    </script>
 </body>
 </html>
