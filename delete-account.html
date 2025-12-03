@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Conta - WePix</title>
+    <meta name="description" content="Solicite a exclusao da sua conta e dados do WePix">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="privacy-header">
+        <div class="container">
+            <a href="index.html" class="back-link">← Voltar</a>
+        </div>
+    </header>
+
+    <!-- Delete Account Content -->
+    <section class="privacy-content">
+        <div class="container">
+            <h1>Solicitar Exclusao de Conta</h1>
+            <p class="last-updated">Em conformidade com a LGPD (Lei Geral de Protecao de Dados)</p>
+
+            <h2>O que acontece quando voce exclui sua conta?</h2>
+            <p>Ao solicitar a exclusao da sua conta, os seguintes dados serao permanentemente removidos:</p>
+            <ul>
+                <li><strong>Dados da conta:</strong> Nome, email, senha e foto de perfil</li>
+                <li><strong>Informacoes de perfil:</strong> Chave PIX e preferencias</li>
+                <li><strong>Mensagens:</strong> Todas as mensagens enviadas por voce nos grupos</li>
+                <li><strong>Despesas:</strong> Despesas criadas por voce (o historico do grupo sera mantido para outros participantes)</li>
+                <li><strong>Participacao em grupos:</strong> Voce sera removido de todos os grupos</li>
+            </ul>
+
+            <h2>Informacoes importantes</h2>
+            <ul>
+                <li>A exclusao e <strong>permanente e irreversivel</strong></li>
+                <li>O processo sera concluido em ate <strong>30 dias</strong> apos a confirmacao</li>
+                <li>Voce recebera um email confirmando a exclusao</li>
+                <li>Alguns dados podem ser retidos por obrigacoes legais conforme a legislacao brasileira</li>
+            </ul>
+
+            <h2>Solicitar Exclusao</h2>
+            <p>Para solicitar a exclusao da sua conta, preencha o formulario abaixo:</p>
+
+            <form class="delete-form" id="deleteForm">
+                <div class="form-group">
+                    <label for="email">Email da conta WePix *</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Motivo da exclusao (opcional)</label>
+                    <select id="reason" name="reason">
+                        <option value="">Selecione um motivo</option>
+                        <option value="nao-uso">Nao uso mais o aplicativo</option>
+                        <option value="privacidade">Preocupacoes com privacidade</option>
+                        <option value="outro-app">Mudei para outro aplicativo</option>
+                        <option value="problemas">Problemas com o aplicativo</option>
+                        <option value="outro">Outro motivo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Comentarios adicionais (opcional)</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Conte-nos mais sobre sua decisao..."></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="confirm" name="confirm" required>
+                    <label for="confirm">Entendo que esta acao e permanente e todos os meus dados serao excluidos.</label>
+                </div>
+
+                <button type="submit" class="submit-button">Solicitar Exclusao</button>
+            </form>
+
+            <h2>Outras opcoes</h2>
+            <p>Se voce prefere entrar em contato diretamente, envie um email para:</p>
+            <p><a href="mailto:privacy@wepix-app.com?subject=Solicita%C3%A7%C3%A3o%20de%20Exclus%C3%A3o%20de%20Conta">privacy@wepix-app.com</a></p>
+            <p>Inclua no email o endereco de email associado a sua conta WePix.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Politica de Privacidade</a>
+            </div>
+            <p class="copyright">© 2025 WePix. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('deleteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var reason = document.getElementById('reason').value;
+            var comments = document.getElementById('comments').value;
+
+            var subject = 'Solicitacao de Exclusao de Conta - WePix';
+            var body = 'Solicito a exclusao da minha conta WePix.\n\n';
+            body += 'Email da conta: ' + email + '\n';
+            if (reason) {
+                body += 'Motivo: ' + reason + '\n';
+            }
+            if (comments) {
+                body += 'Comentarios: ' + comments + '\n';
+            }
+            body += '\nEntendo que esta acao e permanente e irreversivel.';
+
+            window.location.href = 'mailto:privacy@wepix-app.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        });
+    </script>
+</body>
+</html>
