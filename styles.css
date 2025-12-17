@@ -244,7 +244,27 @@ footer {
 
 .copyright {
     font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.footer-legal {
+    margin-top: 16px;
+}
+
+.legal-info {
+    font-size: 13px;
     opacity: 0.7;
+    margin: 4px 0;
+}
+
+.legal-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.legal-info a:hover {
+    text-decoration: underline;
 }
 
 /* Privacy Page Styles */
