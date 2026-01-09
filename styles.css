@@ -135,13 +135,27 @@ nav.main-nav .nav-links a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.store-button {
+    display: inline-block;
+    height: 40px;
 }
 
 .store-button img {
-    height: 54px;
+    height: 40px;
+    width: auto;
     transition: transform 0.2s;
+}
+
+.store-button.play-store {
+    height: 60px;
+    margin: -10px 0;
+}
+
+.store-button.play-store img {
+    height: 60px;
 }
 
 .store-button:hover img {
