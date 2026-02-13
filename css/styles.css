@@ -259,20 +259,32 @@ body.nav-open .hamburger::after {
 
 .download-buttons {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
   animation: fadeInUp 0.8s ease 0.5s backwards;
 }
 
 .store-button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  min-width: 180px;
+  height: 90px;
+  flex-shrink: 0;
+  overflow: hidden;
   line-height: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .store-button img {
-  height: 50px;
-  width: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 .download-btn {
