@@ -22,13 +22,19 @@
             <a href="index.html">
                 <img src="logo-white.png" alt="WePix" class="logo-text">
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Sobre</a></li>
-                <li><a href="privacy.html" class="active">Privacidade</a></li>
-                <li><a href="terms.html">Termos</a></li>
-                <li><a href="delete-account.html">Excluir Conta</a></li>
-            </ul>
+            <button class="nav-toggle" aria-label="Abrir menu" type="button" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <div class="nav-overlay" aria-hidden="true"></div>
+            <div class="nav-drawer">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="privacy.html" class="active">Privacidade</a></li>
+                    <li><a href="terms.html">Termos</a></li>
+                    <li><a href="delete-account.html">Excluir Conta</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -196,6 +202,7 @@
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
+    <script src="nav.js"></script>
 </body>
 
 </html>
