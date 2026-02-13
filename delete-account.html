@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Conta - WePix</title>
     <meta name="description" content="Solicite a exclusão da sua conta e dados do WePix">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_legacy.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="main-nav">
@@ -34,7 +36,8 @@
                 <li><strong>Dados da conta:</strong> Nome, email, senha e foto de perfil</li>
                 <li><strong>Informações de perfil:</strong> Chave PIX e preferências</li>
                 <li><strong>Mensagens:</strong> Todas as mensagens enviadas por você nos grupos</li>
-                <li><strong>Despesas:</strong> Despesas criadas por você (o histórico do grupo será mantido para outros participantes)</li>
+                <li><strong>Despesas:</strong> Despesas criadas por você (o histórico do grupo será mantido para outros
+                    participantes)</li>
                 <li><strong>Participação em grupos:</strong> Você será removido de todos os grupos</li>
             </ul>
 
@@ -46,19 +49,50 @@
 
             <h2>Como solicitar a exclusão</h2>
             <p>Para solicitar a exclusão da sua conta, envie um email para:</p>
-            <p><a href="mailto:privacy@wepix-app.com?subject=Solicita%C3%A7%C3%A3o%20de%20Exclus%C3%A3o%20de%20Conta">privacy@wepix-app.com</a></p>
+            <p><a
+                    href="mailto:privacy@wepix-app.com?subject=Solicita%C3%A7%C3%A3o%20de%20Exclus%C3%A3o%20de%20Conta">privacy@wepix-app.com</a>
+            </p>
             <p>Inclua no email o endereço de email associado à sua conta WePix.</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="copyright">© 2025 WePix</p>
-            <p class="legal-info">Operado por Pedro Vinicio de Carvalho Vaz</p>
-            <p class="legal-info">CNPJ: 63.905.589/0001-97 · Brasil</p>
-            <p class="legal-info"><a href="mailto:support@wepix-app.com">support@wepix-app.com</a></p>
+    <footer class="footer" id="support">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="logo-white.png" alt="WePix" class="logo-text">
+                <p>A forma mais simples de dividir despesas com amigos. Organize suas viagens, jantares e eventos sem
+                    complicação.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/wepix.app/" aria-label="Instagram">
+                        <img src="icon_instagram.png" alt="Instagram" width="20" height="20" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="about.html">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacidade</a></li>
+                    <li><a href="terms.html">Termos</a></li>
+                    <li><a href="delete-account.html">Excluir Conta</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> WePix · Operado por Pedro Vaz · CNPJ: 63.905.589/0001-97 · Brasil</p>
+            <p><a href="mailto:support@wepix-app.com" style="color: var(--primary);">support@wepix-app.com</a></p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>

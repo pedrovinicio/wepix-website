@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre - WePix</title>
     <meta name="description" content="Sobre o WePix e quem opera o aplicativo">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_legacy.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="main-nav">
@@ -28,18 +30,23 @@
             <h1>Sobre o WePix</h1>
 
             <h2>O que é o WePix?</h2>
-            <p>WePix é um aplicativo mobile que facilita a divisão de despesas entre amigos. Perfeito para viagens em grupo, repúblicas, jantares compartilhados e qualquer situação onde você precisa dividir contas de forma justa e sem complicação.</p>
+            <p>WePix é um aplicativo mobile que facilita a divisão de despesas entre amigos. Perfeito para viagens em
+                grupo, repúblicas, jantares compartilhados e qualquer situação onde você precisa dividir contas de forma
+                justa e sem complicação.</p>
 
             <h2>Principais funcionalidades</h2>
             <ul>
-                <li><strong>Registro de despesas:</strong> Adicione gastos em segundos e divida igualmente ou personalize valores</li>
+                <li><strong>Registro de despesas:</strong> Adicione gastos em segundos e divida igualmente ou
+                    personalize valores</li>
                 <li><strong>Chat integrado:</strong> Comunique-se com seu grupo em um só lugar</li>
-                <li><strong>Pagamento com PIX:</strong> Quite dívidas instantaneamente copiando os dados de pagamento</li>
+                <li><strong>Pagamento com PIX:</strong> Quite dívidas instantaneamente copiando os dados de pagamento
+                </li>
                 <li><strong>Grupos ilimitados:</strong> Crie quantos grupos precisar para diferentes ocasiões</li>
             </ul>
 
             <h2>Quem opera o WePix</h2>
-            <p>WePix é desenvolvido e operado por <strong>Pedro Vinicio de Carvalho Vaz</strong>, com sede no Brasil.</p>
+            <p>WePix é desenvolvido e operado por <strong>Pedro Vinicio de Carvalho Vaz</strong>, com sede no Brasil.
+            </p>
             <p>CNPJ: 63.905.589/0001-97</p>
 
             <h2>Contato</h2>
@@ -52,13 +59,42 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="copyright">© 2025 WePix</p>
-            <p class="legal-info">Operado por Pedro Vinicio de Carvalho Vaz</p>
-            <p class="legal-info">CNPJ: 63.905.589/0001-97 · Brasil</p>
-            <p class="legal-info"><a href="mailto:support@wepix-app.com">support@wepix-app.com</a></p>
+    <footer class="footer" id="support">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="logo-white.png" alt="WePix" class="logo-text">
+                <p>A forma mais simples de dividir despesas com amigos. Organize suas viagens, jantares e eventos sem
+                    complicação.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/wepix.app/" aria-label="Instagram">
+                        <img src="icon_instagram.png" alt="Instagram" width="20" height="20" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="about.html">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacidade</a></li>
+                    <li><a href="terms.html">Termos</a></li>
+                    <li><a href="delete-account.html">Excluir Conta</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> WePix · Operado por Pedro Vaz · CNPJ: 63.905.589/0001-97 · Brasil</p>
+            <p><a href="mailto:support@wepix-app.com" style="color: var(--primary);">support@wepix-app.com</a></p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
