@@ -77,7 +77,7 @@ h3 {
     hue-rotate(178deg) brightness(93%) contrast(91%);
 }
 
-.nav-container a {
+.nav-container > a {
   display: inline-block;
   line-height: 0;
 }
