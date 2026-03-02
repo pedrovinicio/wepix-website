@@ -82,6 +82,29 @@ h3 {
   line-height: 0;
 }
 
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.lang-link {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark);
+  text-decoration: none;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.lang-link:hover {
+  background: var(--primary);
+  color: white;
+}
+
 .logo {
   font-family: 'Sora', sans-serif;
   font-size: 1.5rem;

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - WePix</title>
+    <meta name="description" content="About WePix and who operates the app">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body data-lang="en" data-page="about">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="../images/logo-white.png" alt="WePix" class="logo-text">
+            </a>
+            <div class="lang-switcher">
+                <a href="../about.html" class="lang-link" title="Português">PT</a>
+            </div>
+            <button class="nav-toggle" aria-label="Open menu" type="button" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <div class="nav-overlay" aria-hidden="true"></div>
+            <div class="nav-drawer">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="delete-account.html">Delete Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <section class="page-content">
+        <div class="content-inner">
+            <h1>About WePix</h1>
+
+            <h2>What is WePix?</h2>
+            <p>WePix is a mobile app that makes splitting expenses between friends easy. Perfect for group trips, shared
+                houses, dinners and any situation where you need to divide bills fairly and without hassle.</p>
+
+            <h2>Main features</h2>
+            <ul>
+                <li><strong>Expense tracking:</strong> Add expenses in seconds and split equally or customize amounts
+                </li>
+                <li><strong>Built-in chat:</strong> Communicate with your group in one place</li>
+                <li><strong>PIX payments:</strong> Settle debts instantly by copying payment details</li>
+                <li><strong>Unlimited groups:</strong> Create as many groups as you need for different occasions</li>
+            </ul>
+
+            <h2>Who operates WePix</h2>
+            <p>WePix is developed and operated by <strong>Pedro Vinicio de Carvalho Vaz</strong>, based in Brazil.</p>
+            <p>CNPJ: 63.905.589/0001-97</p>
+
+            <h2>Contact</h2>
+            <p>For questions, suggestions or support:</p>
+            <ul>
+                <li>General email: <a href="mailto:support@wepix-app.com">support@wepix-app.com</a></li>
+                <li>Privacy: <a href="mailto:privacy@wepix-app.com">privacy@wepix-app.com</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="support">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo-white.png" alt="WePix" class="logo-text">
+                <p>The simplest way to split expenses with friends. Organize your trips, dinners and events without
+                    hassle.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/wepix.app/" aria-label="Instagram">
+                        <img src="../images/icon_instagram.png" alt="Instagram" width="20" height="20" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="delete-account.html">Delete Account</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> WePix · Operated by Pedro Vaz · CNPJ: 63.905.589/0001-97 · Brazil</p>
+            <p><a href="mailto:support@wepix-app.com" style="color: var(--primary);">support@wepix-app.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="../js/nav.js"></script>
+</body>
+
+</html>

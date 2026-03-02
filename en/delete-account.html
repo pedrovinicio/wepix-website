@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - WePix</title>
+    <meta name="description" content="Request deletion of your WePix account and data">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body data-lang="en" data-page="delete-account">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="../images/logo-white.png" alt="WePix" class="logo-text">
+            </a>
+            <div class="lang-switcher">
+                <a href="../delete-account.html" class="lang-link" title="Português">PT</a>
+            </div>
+            <button class="nav-toggle" aria-label="Open menu" type="button" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <div class="nav-overlay" aria-hidden="true"></div>
+            <div class="nav-drawer">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="delete-account.html" class="active">Delete Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Delete Account Content -->
+    <section class="page-content">
+        <div class="content-inner">
+            <h1>Request Account Deletion</h1>
+            <p class="last-updated">In compliance with LGPD (Brazilian General Data Protection Law)</p>
+
+            <h2>What happens when you delete your account?</h2>
+            <p>When you request account deletion, the following data will be permanently removed:</p>
+            <ul>
+                <li><strong>Account data:</strong> Name, email, password and profile photo</li>
+                <li><strong>Profile information:</strong> PIX key and preferences</li>
+                <li><strong>Messages:</strong> All messages you sent in groups</li>
+                <li><strong>Expenses:</strong> Expenses you created (group history will be kept for other
+                    participants)</li>
+                <li><strong>Group membership:</strong> You will be removed from all groups</li>
+            </ul>
+
+            <h2>Important information</h2>
+            <ul>
+                <li>Deletion is <strong>permanent and irreversible</strong></li>
+                <li>Some data may be retained for legal obligations under Brazilian law</li>
+            </ul>
+
+            <h2>How to request deletion</h2>
+            <p>To request account deletion, send an email to:</p>
+            <p><a
+                    href="mailto:privacy@wepix-app.com?subject=Account%20Deletion%20Request">privacy@wepix-app.com</a>
+            </p>
+            <p>Include the email address associated with your WePix account in the email.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="support">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo-white.png" alt="WePix" class="logo-text">
+                <p>The simplest way to split expenses with friends. Organize your trips, dinners and events without
+                    hassle.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/wepix.app/" aria-label="Instagram">
+                        <img src="../images/icon_instagram.png" alt="Instagram" width="20" height="20" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="delete-account.html">Delete Account</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> WePix · Operated by Pedro Vaz · CNPJ: 63.905.589/0001-97 · Brazil</p>
+            <p><a href="mailto:support@wepix-app.com" style="color: var(--primary);">support@wepix-app.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="../js/nav.js"></script>
+</body>
+
+</html>
