@@ -10,9 +10,12 @@
     <title>WePix - Split Expenses with Friends</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="../images/icon.webp" as="image">
     <link
         href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap"></noscript>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -21,7 +24,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html">
-                <img src="../images/logo-white.png" alt="WePix" class="logo-text">
+                <picture>
+                    <source srcset="../images/logo-white.webp" type="image/webp">
+                    <img src="../images/logo-white.png" alt="WePix" class="logo-text" width="95" height="35">
+                </picture>
             </a>
             <button class="nav-toggle" aria-label="Open menu" type="button" aria-expanded="false">
                 <span class="hamburger"></span>
@@ -45,7 +51,10 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <img src="../images/icon.png" alt="WePix Logo" class="logo">
+                <picture>
+                    <source srcset="../images/icon.webp" type="image/webp">
+                    <img src="../images/icon.png" alt="WePix Logo" class="logo" fetchpriority="high" width="100" height="100">
+                </picture>
                 <h1>Split expenses with friends the easy way!</h1>
                 <p class="hero-subtitle">Shared tracking, built-in chat and PIX payments all in one place</p>
                 <p class="hero-description">Tired of complicated spreadsheets and awkward money conversations? WePix
@@ -58,13 +67,20 @@
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=com.wepix.app"
                         class="store-button play-store-btn" target="_blank" rel="noopener">
-                        <img src="../images/google-play-badge.png" alt="Get it on Google Play">
+                        <picture>
+                        <source srcset="../images/google-play-badge.webp" type="image/webp">
+                        <img src="../images/google-play-badge.png" alt="Get it on Google Play" width="180" height="70">
+                    </picture>
                     </a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="phone-mockup">
-                    <img src="../images/app-sample.png" alt="WePix app preview" width="350" height="700" />
+                    <picture>
+                        <source media="(max-width: 640px)" srcset="../images/app-sample-400.webp" type="image/webp">
+                        <source srcset="../images/app-sample.webp" type="image/webp">
+                        <img src="../images/app-sample.png" alt="WePix app preview" width="350" height="700" loading="lazy" />
+                    </picture>
                 </div>
             </div>
         </div>
@@ -137,7 +153,7 @@
         </div>
         <div class="video-demo-container">
             <div class="video-wrapper">
-                <video class="demo-video" controls loop muted playsinline poster="../images/app-sample.png">
+                <video class="demo-video" controls loop muted playsinline poster="../images/app-sample.webp" preload="none">
                     <source src="../videos/wepix-demo.mp4" type="video/mp4">
                     Your browser does not support HTML5 video.
                 </video>
@@ -249,7 +265,10 @@
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.wepix.app"
                     class="store-button play-store-btn" target="_blank" rel="noopener">
-                    <img src="../images/google-play-badge.png" alt="Get it on Google Play">
+                    <picture>
+                        <source srcset="../images/google-play-badge.webp" type="image/webp">
+                        <img src="../images/google-play-badge.png" alt="Get it on Google Play" width="180" height="70">
+                    </picture>
                 </a>
             </div>
         </div>
@@ -259,12 +278,18 @@
     <footer class="footer" id="support">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="../images/logo-white.png" alt="WePix" class="logo-text">
+                <picture>
+                    <source srcset="../images/logo-white.webp" type="image/webp">
+                    <img src="../images/logo-white.png" alt="WePix" class="logo-text" width="95" height="35">
+                </picture>
                 <p>The simplest way to split expenses with friends. Organize your trips, dinners and events without
                     hassle.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/wepix.app/" aria-label="Instagram">
-                        <img src="../images/icon_instagram.png" alt="Instagram" width="20" height="20" class="social-icon">
+                        <picture>
+                            <source srcset="../images/icon_instagram.webp" type="image/webp">
+                            <img src="../images/icon_instagram.png" alt="Instagram" width="20" height="20" class="social-icon">
+                        </picture>
                     </a>
                 </div>
             </div>
@@ -292,8 +317,8 @@
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
-    <script src="../js/store-buttons.js"></script>
-    <script src="../js/nav.js"></script>
+    <script src="../js/store-buttons.js" defer></script>
+    <script src="../js/nav.js" defer></script>
 </body>
 
 </html>

@@ -303,9 +303,14 @@ body.nav-open .hamburger::after {
   box-sizing: border-box;
 }
 
-.store-button img {
+.store-button img,
+.store-button picture {
   width: 100%;
   height: 100%;
+  display: block;
+}
+
+.store-button img {
   object-fit: contain;
   object-position: center;
 }
