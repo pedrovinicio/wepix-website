@@ -82,11 +82,11 @@ h3 {
   line-height: 0;
 }
 
-/* Language switcher */
+/* Language switcher - inside nav-drawer, beside links on desktop, in drawer on mobile */
 .lang-switcher {
   display: flex;
   align-items: center;
-  margin-right: 1rem;
+  margin-left: 1.5rem;
 }
 
 .lang-link {
@@ -998,6 +998,18 @@ body.nav-open .hamburger::after {
     display: block;
     padding: 1rem 0;
     font-size: 1.1rem;
+  }
+
+  /* Language switcher in mobile drawer - at bottom, separated from links */
+  .nav-drawer .lang-switcher {
+    margin-left: 0;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-drawer .lang-link {
+    display: inline-block;
   }
 
   /* Drawer overlay - click to close */
