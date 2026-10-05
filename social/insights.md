@@ -22,4 +22,5 @@ Takeaways: concrete, relatable group situations (churrasco, Carnaval) with a que
 ## Results
 | Publish | Weekday | Hour | Layout | Type | Topic | Set | Likes | Comments | Score |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | --: | --: | --: |
-| 2026-10-06 | Tue | 12:00 | photo | Você sabia? | Multimoeda | A | | | |
+| 2026-10-05 | Mon | 16:18 | photo | Você sabia? | Multimoeda (test post, off-slot) | A | | | |
+| 2026-10-08 | Thu | 12:00 | card | Engajamento | Dividir apê / quarto maior | A | | | |
