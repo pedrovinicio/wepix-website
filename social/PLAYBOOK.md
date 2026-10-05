@@ -3,17 +3,17 @@
 Instructions for the weekly scheduled run that plans, creates and schedules @wepix.app Instagram posts with no human in the loop. Adapted from Fast Eleven's playbook (`pedrovinicio/fast-eleven-website/social/PLAYBOOK.md`); the main difference is the publisher: **Zapier** (Instagram for Business) instead of Metricool.
 
 ## Fixed settings
-- Account: Instagram **@wepix.app**, published through the Zapier app **Instagram for Business** (`selected_api` `InstagramBusinessCLIAPI`). Timezone `America/Recife`.
+- Account: Instagram **@wepix.app**, published through the Zapier app **Instagram for Business** (`selected_api` `InstagramBusinessCLIAPI`), `instagramPageId` **17841478290077814** (label "WePix"). The same Zapier connection also lists **Fast Eleven (17841442497413753) — never post there.** Timezone `America/Recife`.
 - Cadence: **3 posts/week — Tuesday 12:00, Thursday 12:00, Saturday 10:00** (America/Recife). The weekly run (Mondays) fills every slot in the next 7 days: the coming Tuesday, Thursday and Saturday. Never schedule in the past; skip a slot that already has a post (check `log.md` and `list_triggers`).
 - Language: **Portuguese (Brazil) only**.
 - Drive backup folder id: **1kCbXE2bgAa7kdo45F46QxJ_bmYdsZcZt** ("WePix – Instagram Posts").
 - Repos: app code `pedrovinicio/wepix` (read-only, never push), image hosting `pedrovinicio/wepix-website` (`social/` only; never touch other files — the rest is the live website).
 
 ## How publishing works (Zapier has no scheduler)
-Zapier publishes immediately, so each post gets its **own one-time scheduled task** (`create_trigger` with `run_once_at` = the slot time in UTC, `initiation` `human_schedule`). That task's prompt is self-contained: it checks the image URL returns 200, then calls Zapier `execute_zapier_write_action` with `selected_api` `InstagramBusinessCLIAPI`, `action` `publish_media_v2` (always run `inspect_zapier_actions` on that tool first to get the current param names and the account id), with the raw image URL and the full caption from `caption.txt`. It then writes the returned media id/permalink into `log.md`, commits and pushes. Name tasks `WePix IG — <YYYY-MM-DD> <slug>`.
+Zapier publishes immediately, so each post gets its **own one-time scheduled task** (`create_trigger` with `run_once_at` = the slot time in UTC, `initiation` `human_schedule`). That task's prompt is self-contained: it checks the image URL returns 200, then calls Zapier `execute_zapier_write_action` with `selected_api` `InstagramBusinessCLIAPI`, `action` `publish_media_v2`, params `instagramPageId` `17841478290077814`, `media` [the raw image URL], `caption` (the full text of `caption.txt`, which the task reads from the repo) — run `inspect_zapier_actions` (tool `instagram_for_business_publish_photo_s`) first in case param names changed. It then writes the returned media id into `log.md`, commits and pushes. Name tasks `WePix IG — <YYYY-MM-DD> <slug>`.
 
 ## Goal
-Maximise **reach** (accounts reached, new followers). Optimise for reach, shares and saves first, likes second.
+Maximise **reach and new followers**. Since reach isn't readable (see Learning loop), optimise for comments and follower growth first, likes second. Write captions that invite comments and tags ("marca o amigo que…").
 
 ## Each run
 0. **Review performance first** — see "Learning loop" below. Its decisions (times, hashtags, topic mix, formats) override the defaults in this file for this run.
@@ -38,19 +38,19 @@ Maximise **reach** (accounts reached, new followers). Optimise for reach, shares
 9. Finish with a short summary (in English) of the 3 scheduled posts: date, topic, first line of caption. Report problems plainly.
 
 ## Learning loop (every run, before planning)
-1. Pull data for all posts since the account started (or the last 90 days) through Zapier `_zap_raw_request` (`selected_api` `InstagramBusinessCLIAPI`, `method` GET, Graph API):
-   - posts: `GET https://graph.facebook.com/v21.0/<ig-user-id>/media?fields=id,caption,timestamp,media_type,permalink,like_count,comments_count&limit=50`
-   - per post: `GET https://graph.facebook.com/v21.0/<media-id>/insights?metric=reach,views,saved,shares,follows,total_interactions`
-   - account: `GET https://graph.facebook.com/v21.0/<ig-user-id>/insights?metric=online_followers&period=lifetime` (best hours; skip if unavailable) and `follower_count` (period day).
-   Get `<ig-user-id>` once (`GET https://graph.facebook.com/v21.0/me/accounts?fields=instagram_business_account`) and save it under Fixed settings. If a metric name is rejected (Meta renames metrics), drop it, use the closest replacement and note it in insights.
-2. Match each post to its `log.md` row (by date/caption) and record per-post results in `insights.md` → "Results" table (date, weekday, hour, layout, type, topic, hashtag set, reach, views, shares, saves, follows).
+Zapier's Instagram app is **not granted Meta's insights permission** (`/insights` returns "(#10) Application does not have permission"), so reach, views, saves and shares are not available. The loop uses what is readable: **likes, comments and follower growth**. Score per post = `likes + 3 × comments` ("engagement score").
+1. Read data through Zapier `execute_zapier_read_action` (`selected_api` `InstagramBusinessCLIAPI`, `action` `_zap_raw_request`, `method` GET, `fail_on_errors` false):
+   - posts: `https://graph.facebook.com/v21.0/17841478290077814/media` with querystring `fields=id,caption,timestamp,media_type,like_count,comments_count`, `limit=30`
+   - account: `https://graph.facebook.com/v21.0/17841478290077814` with `fields=followers_count,media_count` — append the follower count with today's date to `insights.md` → "Followers" (one line per run). Weekly growth = difference from last run.
+   Once per run, retry one `/insights` call (e.g. `<media-id>/insights?metric=reach`); if it ever works, switch back to reach/saves/shares (the Fast Eleven metrics) and note it in insights.
+2. Match each post to its `log.md` row (by media id, date or caption) and record per-post results in `insights.md` → "Results" (date, weekday, hour, layout, type, topic, hashtag set, likes, comments, score). Posts need ≥ 3 days before their numbers count.
 3. Decide, and write the reasoning to `insights.md` → "Current decisions" (dated):
-   - **Times**: defaults are Tue 12:00, Thu 12:00, Sat 10:00 (Pedro's choice). Only move a slot after ≥ 6 posts of data, and only when `online_followers` or results clearly favour another hour **on the same day**. Move by ≤ 3 h per week, keep within 08:00–22:00. Do not change the days themselves — recommend it in the summary instead if the data says so.
-   - **Hashtags**: keep `#WePix` always. Rotate 2–3 candidate sets (5–8 tags, mixing big generic tags, mid-size niche tags and topic tags); after each set has ≥ 2 posts, favour the set with best reach per post and replace the weakest tags with new candidates. Track sets by letter in insights. (The Graph API gives no per-hashtag stats for own posts, so compare sets by the reach of the posts that used them.)
-   - **Topics/formats**: give more slots to the content types (Novidade / Você sabia? / Engajamento) and layouts (photo / phone / card) with the highest reach and shares; keep at least 1 slot/week experimental.
+   - **Times**: defaults are Tue 12:00, Thu 12:00, Sat 10:00 (Pedro's choice). Only move a slot after ≥ 6 new posts of data, and only when scores clearly favour another hour **on the same day**. Move by ≤ 3 h per week, keep within 08:00–22:00. Do not change the days themselves — recommend it in the summary instead if the data says so.
+   - **Hashtags**: keep `#WePix` always. Rotate 2–3 candidate sets (5–8 tags); after each set has ≥ 2 posts, favour the set with the best score per post (and week's follower growth) and replace the weakest tags with new candidates. Track sets by letter in insights.
+   - **Topics/formats**: give more slots to the content types (Novidade / Você sabia? / Engajamento) and layouts (photo / phone / card) with the highest scores; comments weigh most because they signal reach. Keep at least 1 slot/week experimental.
    - Change **at most two variables per week** so results stay attributable. With too little data, say so and keep defaults.
 4. Commit `insights.md` with the posts.
-5. In the final summary add a 2–3 line "What I learned / what I changed" section, and a recommendation if something needs Pedro (e.g. "Reels would likely triple reach — want me to start making short videos from the demo video?").
+5. In the final summary add a 2–3 line "What I learned / what I changed" section (include follower growth), and a recommendation if something needs Pedro (e.g. "Video posts scored 2× — want me to start making Reels from the demo video?").
 
 ## Caption style
 - Portuguese, light and friendly, a bit of humour about money between friends — never preachy. Vocabulary: rolê, racha, conta, galera, turma, viagem, churras, república.
