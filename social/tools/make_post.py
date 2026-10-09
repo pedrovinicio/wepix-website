@@ -5,6 +5,7 @@ Usage: python3 make_post.py '<json spec>' out.jpg
 Spec keys:
   layout     "photo" | "phone" | "card"   (default "photo")
   bg         photo layout only: beach | city | nature   (WePix's own group-cover art)
+             or photos/<name> for the lifestyle photos in ./assets/photos
   bg_y       0-1 vertical crop of the photo (default 0.5)
   kicker     short label in the pill, e.g. "NOVIDADE", "VOCÊ SABIA?", "SUA VEZ"
   headline   <= 8 words
