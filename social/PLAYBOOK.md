@@ -31,11 +31,15 @@ Maximise **reach and new followers**. Since reach isn't readable (see Learning l
    - `kicker` (NOVIDADE / VOCÊ SABIA? / SUA VEZ / DICA), `headline` (≤ 8–9 words, Portuguese), `highlight` (words of the headline shown in the accent colour), `sub` (one short sentence), optional `hsize`.
    The fonts have no emoji glyphs — never put emoji in image text (only in captions).
    Open the rendered JPG and check it: text legible, nothing cut off, no overlap, no empty boxes. Re-render if not.
-5. Save to `social/posts/<YYYY-MM-DD>-<slug>/image.jpg` + `caption.txt` (folder date = publish date), append rows to `log.md`, commit and push to `main` (only `social/`). Public URL: `https://raw.githubusercontent.com/pedrovinicio/wepix-website/main/social/posts/<dir>/image.jpg` — confirm it returns 200 before scheduling.
-6. Schedule each post as a one-time scheduled task (see "How publishing works"). Alt text in Portuguese goes in the caption flow only if the Zapier action exposes an alt-text field.
-7. Backup: create one Google Doc per post in the Drive folder titled `<YYYY-MM-DD> — <Tema> (Instagram)` containing publish time, image link, scheduled-task name and the full caption.
-8. Update the "Task" column in `log.md`, commit, push.
-9. Finish with a short summary (in English) of the 3 scheduled posts: date, topic, first line of caption. Report problems plainly.
+5. **Finish one post completely before starting the next** (so an interrupted run never leaves a post prepared but unscheduled). For each post, in order:
+   a. Save `social/posts/<YYYY-MM-DD>-<slug>/image.jpg` + `caption.txt` (folder date = publish date), commit and push to `main` (only `social/`).
+   b. Confirm `https://raw.githubusercontent.com/pedrovinicio/wepix-website/main/social/posts/<dir>/image.jpg` returns 200.
+   c. Create its one-time publish task (see "How publishing works") and check the result says it was created.
+   d. Only then append its row to `log.md` with status `scheduled` and the task name; commit and push. A row may say `scheduled` only if its task exists.
+6. Backup: create one Google Doc per post in the Drive folder titled `<YYYY-MM-DD> — <Tema> (Instagram)` containing publish time, image link, scheduled-task name and the full caption.
+7. Finish with a short summary (in English) of the 3 scheduled posts: date, topic, first line of caption. Report problems plainly.
+
+A daily watchdog task (`WePix IG watchdog`) re-checks this: any future `scheduled` row without an enabled publish task gets one, and an empty slot in the next 48 h is filled by running steps 2–5 for that slot.
 
 ## Learning loop (every run, before planning)
 Zapier's Instagram app is **not granted Meta's insights permission** (`/insights` returns "(#10) Application does not have permission"), so reach, views, saves and shares are not available. The loop uses what is readable: **likes, comments and follower growth**. Score per post = `likes + 3 × comments` ("engagement score").
