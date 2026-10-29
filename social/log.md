@@ -15,3 +15,4 @@ One line per post, newest last. Weekly runs read this to avoid repeating topics.
 | 2026-10-24 10:00 | 2026-10-24-noite-de-jogo | Engajamento | Noite de jogo/pizza com a galera: quem pagou a pizza? | WePix IG — 2026-10-24 noite-de-jogo | 18161201248503659 — https://www.instagram.com/p/De4MSZ6l94M/ |
 | 2026-10-27 12:00 | 2026-10-27-saldo-verde-vermelho | Você sabia? | Saldo no card do grupo: verde = tem a receber, vermelho = deve; "Ver despesas" mostra o detalhe | WePix IG — 2026-10-27 saldo-verde-vermelho | 18349905253253890 — https://www.instagram.com/p/DfAIZhzl9uj/ |
 | 2026-10-29 12:00 | 2026-10-29-gratis-sem-anuncios | Você sabia? | 100% gratuito e sem anúncios; Android e iOS no mesmo grupo | WePix IG — 2026-10-29 gratis-sem-anuncios | scheduled |
+| 2026-10-31 10:00 | 2026-10-31-compra-do-mercado | Engajamento | Compra do mês da casa: quem passou o cartão no mercado? (dividir igual ou valores diferentes) | WePix IG — 2026-10-31 compra-do-mercado | scheduled |
